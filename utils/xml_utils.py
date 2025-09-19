@@ -1,3 +1,6 @@
+import pandas as pd
+import xml.etree.ElementTree as ET
+
 def extract_attendance_from_xml_final(file_path: str) -> pd.DataFrame:
     tree = ET.parse(file_path); root = tree.getroot(); data = []; ns = {'ss': 'urn:schemas-microsoft-com:office:spreadsheet'}
     header_row_index = -1; rows = root.findall(".//ss:Row", ns)
